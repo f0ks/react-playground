@@ -27,7 +27,6 @@ export default class TodoDataInterface {
     }
 
     getAllTodos() {
-        debugger;
         return this.todos.map(todo => todo);
     }
 }

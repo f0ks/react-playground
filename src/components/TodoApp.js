@@ -2,6 +2,9 @@ import React from 'react';
 import VisibleTodoList from './VisibleTodoList';
 import styled from 'styled-components'
 
+import {Button} from 'react-bootstrap';
+import {ButtonToolbar} from 'react-bootstrap';
+
 export default class TodoApp extends React.Component {
     constructor(props) {
         super(props);
@@ -57,6 +60,31 @@ export default class TodoApp extends React.Component {
           color: ${myColor};
         `;
 
+        const buttonsInstance = (
+            <ButtonToolbar>
+                {/* Standard button */}
+                <Button>Default</Button>
+
+                {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
+                <Button bsStyle="primary">Primary</Button>
+
+                {/* Indicates a successful or positive action */}
+                <Button bsStyle="success">Success</Button>
+
+                {/* Contextual button for informational alert messages */}
+                <Button bsStyle="info">Info</Button>
+
+                {/* Indicates caution should be taken with this action */}
+                <Button bsStyle="warning">Warning</Button>
+
+                {/* Indicates a dangerous or potentially negative action */}
+                <Button bsStyle="danger">Danger</Button>
+
+                {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
+                <Button bsStyle="link">Link</Button>
+            </ButtonToolbar>
+        );
+
         return (
             <div>
                 <Header>styled header</Header>
@@ -86,6 +114,9 @@ export default class TodoApp extends React.Component {
                         )
                     }
                 </div>
+
+                {buttonsInstance}
+
 
             </div>
         );

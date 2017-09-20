@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import TodoDataInterface from './lib/TodoDataInterface';
 import TodoApp from './components/TodoApp';
 
-// Stylesheets
+// require('bootstrap/dist/css/bootstrap.css') ;
 require('./scss/main.scss');
 
 const todoDataInterface = new TodoDataInterface();
