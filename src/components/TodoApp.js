@@ -1,9 +1,7 @@
 import React from 'react';
 import VisibleTodoList from './VisibleTodoList';
-import styled from 'styled-components'
+import RaisedButton from 'material-ui/RaisedButton';
 
-import {Button} from 'react-bootstrap';
-import {ButtonToolbar} from 'react-bootstrap';
 
 export default class TodoApp extends React.Component {
     constructor(props) {
@@ -51,49 +49,24 @@ export default class TodoApp extends React.Component {
     }
 
     render() {
-        let myColor = 'blue';
 
         let visibleTodos = this.visibleTodos();
 
-        let Header = styled.h1`
-          font-size: 1.5em;
-          color: ${myColor};
-        `;
+        const style = {
+            margin: 12,
+        };
 
-        const buttonsInstance = (
-            <ButtonToolbar>
-                {/* Standard button */}
-                <Button>Default</Button>
-
-                {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
-                <Button bsStyle="primary">Primary</Button>
-
-                {/* Indicates a successful or positive action */}
-                <Button bsStyle="success">Success</Button>
-
-                {/* Contextual button for informational alert messages */}
-                <Button bsStyle="info">Info</Button>
-
-                {/* Indicates caution should be taken with this action */}
-                <Button bsStyle="warning">Warning</Button>
-
-                {/* Indicates a dangerous or potentially negative action */}
-                <Button bsStyle="danger">Danger</Button>
-
-                {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
-                <Button bsStyle="link">Link</Button>
-            </ButtonToolbar>
-        );
 
         return (
             <div>
-                <Header>styled header</Header>
+
                 <input
                     type="text"
                     placeholder="What do you want todo?"
                     ref={(c => this._todoInputField = c)}
                 />
-                <button onClick={this.addTodo}>Add Todo</button>
+                <RaisedButton label="Add Todo" onClick={this.addTodo} style={style} primary={true} />
+
                 <VisibleTodoList
                     visibleTodos={visibleTodos}
                     visibilityFilter={this.state.visibilityFilter}
@@ -114,8 +87,6 @@ export default class TodoApp extends React.Component {
                         )
                     }
                 </div>
-
-                {buttonsInstance}
 
 
             </div>
