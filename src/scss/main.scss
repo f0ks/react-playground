@@ -1,0 +1,16 @@
+body {
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box
+  }
+
+  @import "button";
+
+  background: #cfcfaf;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  $border-style: 1px solid green;
+
+}
